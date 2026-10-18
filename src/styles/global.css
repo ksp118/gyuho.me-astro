@@ -1,0 +1,50 @@
+:root {
+  --bone: #f8f7f4; /* 바탕: offwhite */
+  --ink: #111; /* 진한 글자: 헤더, 제목 */
+  --text: #444; /* 기본 글자: 본문 */
+  --hr: #888;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bone);
+  color: var(--text);
+
+  margin: 0 auto;
+  padding-inline: 1rem;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  max-width: 44rem;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+}
+
+hr {
+  color: var(--hr);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}

@@ -1,16 +1,26 @@
 ---
+import Base from "../layouts/Base.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="gyuho.me">
+  <div class="index-main">
+    <div class="introduction">
+      <h1 class="name">Gyuho Lee</h1>
+      <p>전자전기와 컴퓨터, 수학 그 사이 어딘가.</p>
+    </div>
+    <hr />
+    <h2 class="recent">최신글</h2>
+  </div>
+</Base>
+
+<style>
+  .introduction {
+    margin-block: 4rem;
+  }
+  .recent {
+    text-align: left;
+  }
+  .name {
+    color: #000;
+  }
+</style>
