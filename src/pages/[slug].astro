@@ -1,4 +1,5 @@
 ---
+import "../styles/prose.css";
 import Base from "../layouts/Base.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 
@@ -19,6 +20,10 @@ const { Content } = await render(post);
 ---
 
 <Base title={post.data.title}>
-  <h1>{post.data.title}</h1>
-  <Content />
+  <article>
+    <h1>{post.data.title}</h1>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
 </Base>

@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Not Found">
+  <div class="not-found-main">
+    <h1>Not Found</h1>
+    <p>Check the address again</p>
+    <a href="/">Go to Home</a>
+  </div>
+</Base>
+
+<style>
+  h1 {
+    margin-bottom: 5rem;
+  }
+  .not-found-main {
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 25svh;
+    align-items: center;
+  }
+</style>

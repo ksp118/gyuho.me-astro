@@ -1,5 +1,9 @@
 ---
+import { getCollection } from "astro:content";
+import PostList from "../component/PostList.astro";
 import Base from "../layouts/Base.astro";
+
+const posts = await getCollection("posts");
 ---
 
 <Base title="gyuho.me">
@@ -10,6 +14,11 @@ import Base from "../layouts/Base.astro";
     </div>
     <hr />
     <h2 class="recent">최신글</h2>
+    <PostList
+      posts={posts.toSorted(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+      )}
+    />
   </div>
 </Base>
 
