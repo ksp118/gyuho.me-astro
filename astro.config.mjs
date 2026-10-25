@@ -32,5 +32,6 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       rehypePlugins: [rehypeKatex, rehypeKatexStrict],
     }),
+    shikiConfig: { theme: "min-light" },
   },
 });
