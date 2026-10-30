@@ -1,4 +1,20 @@
+.prose {
+  font-size: 17px;
+  line-height: 1.7;
+}
 .prose a {
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
+}
+.prose code,
+.prose pre {
+  font-family:
+    var(--font-code), var(--font-body), var(--font-body-rest), monospace;
+  letter-spacing: normal;
+}
+.prose .katex {
+  letter-spacing: normal;
+}
+.prose .katex .hangul_fallback {
+  font-family: var(--font-body), var(--font-body-rest);
 }

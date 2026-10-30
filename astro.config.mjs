@@ -1,6 +1,6 @@
 // @ts-check
 import { unified } from "@astrojs/markdown-remark";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
@@ -34,4 +34,78 @@ export default defineConfig({
     }),
     shikiConfig: { theme: "min-light" },
   },
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: "Gyuho Sans",
+      cssVariable: "--font-body",
+      fallbacks: [],
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/body-400.core.woff2"],
+            weight: 400,
+            style: "normal",
+          },
+          {
+            src: ["./src/assets/fonts/body-700.core.woff2"],
+            weight: 700,
+            style: "normal",
+          },
+        ],
+      },
+    },
+    {
+      provider: fontProviders.local(),
+      name: "Gyuho Sans Rest",
+      cssVariable: "--font-body-rest",
+      fallbacks: [],
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/body-400.rest.woff2"],
+            weight: 400,
+            style: "normal",
+            unicodeRange: ["U+AC00-D7A3"],
+          },
+          {
+            src: ["./src/assets/fonts/body-700.rest.woff2"],
+            weight: 700,
+            style: "normal",
+            unicodeRange: ["U+AC00-D7A3"],
+          },
+        ],
+      },
+    },
+    {
+      provider: fontProviders.local(),
+      name: "SUIT",
+      cssVariable: "--font-head",
+      fallbacks: ["sans-serif"],
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/head-700.woff2"],
+            weight: 700,
+            style: "normal",
+          },
+        ],
+      },
+    },
+    {
+      provider: fontProviders.local(),
+      name: "IBM Plex Mono",
+      cssVariable: "--font-code",
+      fallbacks: [],
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/code-400.woff2"],
+            weight: 400,
+            style: "normal",
+          },
+        ],
+      },
+    },
+  ],
 });

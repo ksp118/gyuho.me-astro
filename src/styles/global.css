@@ -24,6 +24,8 @@ body {
   flex-direction: column;
 
   max-width: 44rem;
+
+  font-family: var(--font-body), var(--font-body-rest), sans-serif;
 }
 
 main {
@@ -34,6 +36,8 @@ h1,
 h2,
 h3 {
   color: var(--ink);
+  font-family: var(--font-head);
+  letter-spacing: -0.01em;
 }
 
 hr {
