@@ -4,6 +4,8 @@ import { defineConfig, fontProviders } from "astro/config";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+import sitemap from "@astrojs/sitemap";
+
 /** @type {import('@astrojs/markdown-remark').RehypePlugin} */
 function rehypeKatexStrict() {
   const isBuild = process.env.NODE_ENV === "production";
@@ -27,6 +29,7 @@ function rehypeKatexStrict() {
 export default defineConfig({
   site: "https://gyuho.me",
   trailingSlash: "always",
+
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
@@ -34,6 +37,7 @@ export default defineConfig({
     }),
     shikiConfig: { theme: "min-light" },
   },
+
   fonts: [
     {
       provider: fontProviders.local(),
@@ -108,4 +112,6 @@ export default defineConfig({
       },
     },
   ],
+
+  integrations: [sitemap()]
 });
